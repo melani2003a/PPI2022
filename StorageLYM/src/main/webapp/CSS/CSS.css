@@ -12,5 +12,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .nav-item{
-   color:#FF0000
+   color:#FF0000;
+   margin-top: -100px;
+   margin-right: 20px;
 }
+
+.punto {
+    width: 100px;
+    margin-left: -90px;
+    margin-top: 15px;
+}
+
+
+.texto{
+    text-align: justify;
+    margin-right: 20px;
+    margin-left: 110px;
+    margin-top: 70px;
+}
+
+.imagen{
+    float: right;
+    margin-top: -180px;
+}
+
