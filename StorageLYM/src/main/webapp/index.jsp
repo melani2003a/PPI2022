@@ -28,7 +28,9 @@
   </li>
    <li class="nav-item1">
        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-           <button type="button" class="btn btn-danger">Registrarse</button>
+           <button type="button" class="btn btn-danger">
+               Registrarse<img src="../Images/image_processing20200508-13692-15uuikj.png" class="cuadro">
+           </button>
        </a>
   </li>
 </ul>
