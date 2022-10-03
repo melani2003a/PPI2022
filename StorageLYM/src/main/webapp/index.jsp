@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>STORAGE LYM</title>
-        <link rel="stylesheet" type="text/css" href="CSS/CSS.css"/>
+        <link rel="stylesheet" type="text/css" href="./CSS/CSS.css"/>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <!-- jQuery -->
@@ -22,23 +22,16 @@
     </head>
     <body class="cuerpo">
         <%-- Este es el navbar de la pantalla principal--%>
-        <nav>
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="https://puntorojo.com.pe/wp-content/uploads/2022/05/punto.png" class="punto">
-                </a>
-            </div>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="#" style="color: #FF0000">Resgistrarse</a>
-                </li>
-                <li class="nav-item"> <%--LInk en el nadvar que funciona como boton de inicio de sesion--%>
-                    <button type="button" class="btn btn-danger nav-link" href="#" >
-                        Iniciar Sesion
-                    </button>
-                </li>
-            </ul>         
-        </nav>
+        <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Iniciar Sesion</a>
+  </li>
+   <li class="nav-item1">
+       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+           <button type="button" class="btn btn-danger">Registrarse</button>
+       </a>
+  </li>
+</ul>
 
         <%-- Este es el mensaje de la pagina principal --%>
         <div class="texto">
