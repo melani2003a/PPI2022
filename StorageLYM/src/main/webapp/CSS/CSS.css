@@ -20,7 +20,7 @@
 
 .botonBasico{
     border: 1px solid #e86259;
-    margin-top: 50px;
+    margin-top: 45px;
     margin-right: 40px;
     padding-left: 20px;
     padding-right: 20px;
@@ -47,12 +47,6 @@
     color: red;
     margin-top: 15px;
     margin-right: 20px;
-}
-
-.nav-item1{
-    color: red;
-    margin-top: -5px;
-    margin-right: 10px;
 }
 
 .texto{
@@ -84,7 +78,7 @@
 .sabermas{
     margin-top: 30px;
     margin-left: 100px;
-    color: #e20f00; 
+    color: #e20f00;
     font-family: 'Candara', sans-serif ; /*tipografía texto*/
     font-size: 15px;
     font-weight: bold;
@@ -99,35 +93,41 @@
     width: 200px;
     height: 160px;
     margin-left: 400px;
-    margin-top: 10px;
 }
-#normal .red {
+
+#normal .rows {
     width: 500px;
     height: 40px;
     border-radius: 3px;
     margin-bottom: 20px;
     background-color: white;
 }
-#normal .blue {
-    width: 500px;
-    height: 40px;
-    border-radius: 3px;
-    margin-bottom: 20px;
-    background-color: white;
+
+.botonInvisible2{
+    background-color: transparent;
+    border: none;
+    color: #e20f00;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;
 }
-#normal .orange {
-    width: 500px;
-    height: 40px;
-    border-radius: 3px;
-    margin-bottom: 20px;
-    background-color: white;
-}
-#normal .green {
-    width: 500px;
-    height: 50px;
-    border-radius: 3px;
-    margin-bottom: 20px;
-    background-color: white;
+
+.botonBasico4{
+    margin-top: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #e86259;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 footer {
@@ -138,30 +138,23 @@ footer {
     background-color: white;
     margin-top: -10px;
 }
-
 .titulo{
     text-align: center;
 }
 
 .editar{
-    height: 30px;
-    width: 30px;
     margin-left: 250px;
     margin-top: 5px;
 }
 
 .eliminar{
-    height: 30px;
-    width: 30px;
     margin-top: 5px;
 }
 
-.chulo{
-    height: 30px;
-    width: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
+.checkRows{
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 .cliente{
@@ -203,7 +196,6 @@ footer {
 
 .app-title {
     text-align: center;
-    color: #777;
 }
 
 .register-form {
@@ -237,8 +229,6 @@ input:focus {
     width: 220px;
 
 }
-
-
 
 .register-link {
     font-size: 12px;
@@ -257,12 +247,6 @@ input:focus {
     outline: none;
 }
 
-.register {
-    margin: 20px auto;
-    width: 400px;
-    height: 400px;
-    margin-top: 100px;
-}
 .register-screen {
     background-color: #FFF;
     padding: 20px;
@@ -271,7 +255,7 @@ input:focus {
 
 .app-title {
     text-align: center;
-    color: #777;
+    margin-bottom: 13px;
 }
 
 .register-form {
@@ -283,14 +267,14 @@ input:focus {
 }
 
 input {
-    text-align: center;
+    text-align: left;
     background-color: #ECF0F1;
     border: 2px solid transparent;
     border-radius: 3px;
     font-size: 16px;
     font-weight: 200;
     padding: 10px 0;
-    width: 330px;
+    width: 350px;
     transition: border .5s;
 }
 
@@ -299,14 +283,33 @@ input:focus {
     box-shadow: none;
 }
 
-.btn {
-    background: red;
-    border-radius: 3px;
-    width: 220px;
-
+.botonBasico2{
+    border: 1px solid #e86259;
+    margin-top: 10px;
+    padding-left: 135px;
+    padding-right: 135px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: inherit;
 }
 
-
+.botonBasico5{
+    margin-top: -100px;
+    border: 1px solid #e86259;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 17px;
+}
 
 .register-link {
     font-size: 12px;
@@ -315,7 +318,41 @@ input:focus {
     margin-top: 12px;
 }
 
+.form-check-label{
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    font-size: 15px;
+    color: #4B4B4B;
+}
+
 .check{
+    margin-top: 10px;
     margin-left: -150px;
     margin-right: -150px;
+
+}
+
+.dropdown-toggle{
+    border: none;
+    text-align: left;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    padding: 10px 0;
+    width: 350px;
+    transition: border .5s;
+}
+
+.botonBasico3{
+    border: 1px solid #e86259;
+    margin-top: 10px;
+    padding-left: 126px;
+    padding-right: 126px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: inherit;
 }

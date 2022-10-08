@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Storage LYM</title>
         <link rel="stylesheet" type="text/css" href="./CSS/CSS.css"/>
+        
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <!-- jQuery -->
@@ -24,10 +25,10 @@
         <%-- Este es el navbar--%>
         <div class="nav justify-content-end">
             <div id="circulo"></div>
-            <button type="button" class="botonInvisible">Registrarse</button>
-            <button type="button" class="botonBasico">Inicio sesión</button>
+            <a href="/StorageLYM/jsp/Registro.jsp"><button type="button" class="botonInvisible">Registrarse</button></a>
+            <a href="/StorageLYM/jsp/InicioSesion.jsp"><button type="button" class="botonBasico">Inicio sesión</button></a>
         </div>
-        
+
 
         <%-- Este es el mensaje de la pagina principal --%>
         <div class="texto">

@@ -24,41 +24,33 @@ Author     : Melani
             <div class="register-screen">
                 <div class="app-title">
                     <h1>Registrarse</h1>
-                    <p>Hoal como estas </p>
+                    <p class="parrafo">Es un hecho establecido desde hace mucho tiempo que un lector</p>
                 </div>
                 <div class=register-form">
                     <div class="control-group">
-                        <input type="text" class="register-field" value="" placeholder="Usuario" id="register-name">
+                        <input type="text" class="register-field" value="" placeholder="  Usuario" id="register-name">
                         <label class="register-field-icon fui-user" for="register-name"></label>
                     </div>
 
                     <div class="control-group">
-                        <input type="password" class="register-field" value="" placeholder="Contraseña" id="register-pass">
+                        <input type="password" class="register-field" value="" placeholder="  Contraseña" id="register-pass">
                         <label class="register-field-icon fui-lock" for="register-pass"></label>
                     </div>
-
-                    <div class="control-group">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Rol
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item active" href="#">Cliente</a></li>
-                                <li><a class="dropdown-item" href="#">Proveedor</a></li>
-
-                            </ul>
-                        </div>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            &nbsp; Rol
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item active" href="#">Cliente</a></li>
+                            <li><a class="dropdown-item" href="#">Proveedor</a></li>
+                        </ul>
                     </div>
-                    
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" class="check"> Terminos y Condiciones</label><br>
 
-                    <a class="btn btn-danger btn-large btn-block" href="#">
-                        Registrase <img src="../Images/image_processing20200508-13692-15uuikj.png" class="cuadro">
+                    <label class="form-check-label"><input type="checkbox" id="cbox1" value="true" class="check"> Aceptar términos y condiciones</label><br>
 
-                    </a>
-
+                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonBasico2">Registrarse</button></a>
                 </div>
-                
+
             </div>
         </div>
     </body>

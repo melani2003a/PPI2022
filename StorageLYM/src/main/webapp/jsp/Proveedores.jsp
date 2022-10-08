@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Clientes
+    Document   : Autos
     Created on : 24/09/2022, 07:24:12 AM
-    Author     : Melani
+    Author     : Valeria
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title class="titulo">Clientes</title>
+        <title class="titulo">Proveedores</title>
         <!--    <link rel="stylesheet" type="text/css" href="CSS/CSS.css"/> -->
         <link rel="stylesheet" href="../CSS/CSS.css"/>
         <!-- Latest compiled and minified CSS -->
@@ -46,7 +46,7 @@
             </li>
         </ul>
 
-        <h1 class="titulo">Clientes</h1>
+        <h1 class="titulo">Proveedores</h1>
         <p class="cliente">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en 
             demostraciones de tipografías o de borradores de diseño para probar 
             el diseño visual antes de insertar el texto final</p>
@@ -56,7 +56,7 @@
             <div class="rows"> 
                 <p class="nombres">
                     <img src="../Images/check.png" class="checkRows">
-                    Alejandro Perez 
+                    Distribuciones INC 
                     <img src="../Images/editar.png" class="editar">
                     <img src="../Images/delete.png" class="eliminar">
                 </p>   
@@ -64,7 +64,7 @@
             <div class="rows"> 
             <p class="nombres">
                     <img src="../Images/check.png" class="checkRows">
-                    Luisa Castaño A
+                    Distribuciones CAD
                     <img src="../Images/editar.png" class="editar">
                     <img src="../Images/delete.png" class="eliminar">
                 </p>
@@ -72,7 +72,7 @@
             <div class="rows">
             <p>
                     <img src="../Images/check.png" class="checkRows">
-                    Luisa Castaño A
+                    Distribuciones MIS
                     <img src="../Images/editar.png" class="editar">
                     <img src="../Images/delete.png" class="eliminar">
                 </p>
@@ -80,7 +80,7 @@
             <div class="rows"> 
             <p>
                     <img src="../Images/check.png" class="checkRows">
-                    Alejandro Perez
+                    Distribuciones TYT
                     <img src="../Images/editar.png" class="editar">
                     <img src="../Images/delete.png" class="eliminar">
                 </p>
@@ -88,13 +88,13 @@
             <div class="rows"> 
             <p>
                     <img src="../Images/check.png" class="checkRows">
-                    Alejandro Perez
+                    Distribuciones ANS
                     <img src="../Images/editar.png" class="editar">
                     <img src="../Images/delete.png" class="eliminar">
                 </p>
             </div>
                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
+                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonBasico5">Nuevo proveedor</button></a>
         </div>       
 
     <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 

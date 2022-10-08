@@ -20,26 +20,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     </head>
     <body class="cuerpo">
-    <div class="login">
-		<div class="login-screen">
+    <div class="register">
+		<div class="register-screen">
 			<div class="app-title">
-				<h1>Iniciar Sesion</h1>
+				<h2>Iniciar Sesion</h2>
 			</div>
 
 			<div class="login-form">
 				<div class="control-group">
-				<input type="text" class="login-field" value="" placeholder="Usuario" id="login-name">
+				<input type="text" class="login-field" value="" placeholder="  Usuario" id="login-name">
 				<label class="login-field-icon fui-user" for="login-name"></label>
 				</div>
 
 				<div class="control-group">
-				<input type="password" class="login-field" value="" placeholder="Contraseña" id="login-pass">
+				<input type="password" class="login-field" value="" placeholder="  Contraseña" id="login-pass">
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-				<a class="btn btn-danger btn-large btn-block" href="#">
-                                    Iniciar Sesion <img src="../Images/image_processing20200508-13692-15uuikj.png" class="cuadro">
-                                </a>
+				<a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonBasico3">Iniciar Sesión</button></a>
 				
 			</div>
 		</div>

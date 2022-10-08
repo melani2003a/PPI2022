@@ -25,19 +25,23 @@
         <!<!-- Nav principal que servira para esta y las demas paginas -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./Clientes.jsp">Clientes</a>
+               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonInvisible2">Clientes</button></a>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Autos</a>
+                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Autos.jsp"><button type="button" class="botonInvisible2">Autos</button></a>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Proveedores</a>
+                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Proveedores.jsp"><button type="button" class="botonInvisible2">Proveedores</button></a>
+                </a>
             </li>
             <li class="nav-item1">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                    <button type="button" class="btn btn-danger">
-                        Regresar <img src="../Images/image_processing20200508-13692-15uuikj.png" class="cuadro">
-                    </button>
+                    <a href="/StorageLYM/index.jsp"><button type="button" class="botonBasico4">Salir</button></a>
                 </a>
             </li>
         </ul>
@@ -49,67 +53,67 @@
 
         <!-- Contenedores de la informacion -->
         <div id="normal">
-            <div class="red"> 
-                <p>
-                    <img src="../Images/7508.png" class="chulo">
+            <div class="rows"> 
+                <p class="nombres">
+                    <img src="../Images/check.png" class="checkRows">
                     Alejandro Perez 
-                    <img src="../Images/1486504369-change-edit-options-pencil-settings-tools-write_81307.png" class="editar">
-                    <img src="../Images/1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" class="eliminar">
+                    <img src="../Images/editar.png" class="editar">
+                    <img src="../Images/delete.png" class="eliminar">
                 </p>   
             </div>
-            <div class="blue"> 
-            <p>
-                    <img src="../Images/7508.png" class="chulo">
-                    Luis Castaño A.
-                    <img src="../Images/1486504369-change-edit-options-pencil-settings-tools-write_81307.png" class="editar">
-                    <img src="../Images/1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" class="eliminar">
+            <div class="rows"> 
+            <p class="nombres">
+                    <img src="../Images/check.png" class="checkRows">
+                    Luisa Castaño A
+                    <img src="../Images/editar.png" class="editar">
+                    <img src="../Images/delete.png" class="eliminar">
                 </p>
             </div>
-            <div class="orange">
+            <div class="rows">
             <p>
-                    <img src="../Images/7508.png" class="chulo">
-                    Camille Ruiz B.
-                    <img src="../Images/1486504369-change-edit-options-pencil-settings-tools-write_81307.png" class="editar">
-                    <img src="../Images/1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" class="eliminar">
+                    <img src="../Images/check.png" class="checkRows">
+                    Luisa Castaño A
+                    <img src="../Images/editar.png" class="editar">
+                    <img src="../Images/delete.png" class="eliminar">
                 </p>
             </div>
-            <div class="green"> 
+            <div class="rows"> 
             <p>
-                    <img src="../Images/7508.png" class="chulo">
-                    Alvaro Lopez R.
-                    <img src="../Images/1486504369-change-edit-options-pencil-settings-tools-write_81307.png" class="editar">
-                    <img src="../Images/1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" class="eliminar">
+                    <img src="../Images/check.png" class="checkRows">
+                    Alejandro Perez
+                    <img src="../Images/editar.png" class="editar">
+                    <img src="../Images/delete.png" class="eliminar">
                 </p>
             </div>
-            <div class="green"> 
+            <div class="rows"> 
             <p>
-                    <img src="../Images/7508.png" class="chulo">
-                    Luisa Domiguez
-                    <img src="../Images/1486504369-change-edit-options-pencil-settings-tools-write_81307.png" class="editar">
-                    <img src="../Images/1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" class="eliminar">
+                    <img src="../Images/check.png" class="checkRows">
+                    Alejandro Perez
+                    <img src="../Images/editar.png" class="editar">
+                    <img src="../Images/delete.png" class="eliminar">
                 </p>
             </div>
-            <div class="clientes">
-                <button type="button" class="btn btn-danger" data-bs-toggle="button" aria-pressed="true" style="width: 250px">
-                Nuevo Cliente <img src="../Images/image_processing20200508-13692-15uuikj.png" class="cuadro">
-            </button>
-            </div>
+               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
         </div>       
 
     <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 
     <footer>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./Clientes.jsp">Clientes</a>
+                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonInvisible2">Clientes</button></a>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Autos</a>
+                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Autos.jsp"><button type="button" class="botonInvisible2">Autos</button></a>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ventas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Proveedores</a>
+                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a href="/StorageLYM/jsp/Proveedores.jsp"><button type="button" class="botonInvisible2">Proveedores</button></a>
+                </a>
             </li>
         </ul>
     </footer>
