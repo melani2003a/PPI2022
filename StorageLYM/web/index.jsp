@@ -5,13 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Storage LYM</title>
         <link rel="stylesheet" type="text/css" href="./CSS/CSS.css"/>
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <!-- jQuery -->
@@ -21,6 +22,7 @@
 
 
     </head>
+    
     <body class="cuerpo">
         <%-- Este es el navbar--%>
         <div class="nav justify-content-end">

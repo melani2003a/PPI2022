@@ -22,6 +22,12 @@ public class ConexionDB {
         return con;
     }
 
+    public Connection conectar(){
+        Connection con = null;
+        
+        return con;
+        
+    }
     public static void main(String[] args) {
      
         ConexionDB.getConexion();

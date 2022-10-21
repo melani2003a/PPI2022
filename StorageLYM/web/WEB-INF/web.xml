@@ -4,9 +4,33 @@
         <servlet-name>Controlador</servlet-name>
         <servlet-class>com.mycompany.storagelym.controlador.Controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>com.mycompany.storagelym.controlador.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>com.mycompany.storagelym.controlador.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet1</servlet-name>
+        <servlet-class>com.mycompany.storagelym.controlador.NewServlet1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/MainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet1</servlet-name>
+        <url-pattern>/NewServlet1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
