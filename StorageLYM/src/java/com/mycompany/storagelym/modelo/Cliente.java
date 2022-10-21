@@ -4,101 +4,95 @@
  */
 package com.mycompany.storagelym.modelo;
 
-/**
- *
- * @author dpaoc
- */
 public class Cliente {
+    private int id_cliente;
+    private String nombre_cliente;
+    private String apellido_cliente;
+    private String documento_cliente;
+    private String direccion_cliente;
+    private String telefono_cliente;
+    private String celular_cliente;
+    private String correo;
+    private String contraseña;
+    private String nombre_empresa;
+    private String telefono_empresa;
+    private String ubicacion_empresa;
+    private String rut_empresa;
+    private int id_tipo_cliente_fk;
 
-    int idCliente;
-    String nombreCliente;
-    String primerApellido;
-    String segundoApellido;
-    String documentoCliente;
-    String direccion;
-    String telefono;
-    String celular;
-    String correo;
-    String contraseña;
+    public Cliente(int id_cliente, String nombre_cliente, String apellido_cliente, String documento_cliente, String direccion_cliente, String telefono_cliente, String celular_cliente, String correo, String contraseña, String nombre_empresa, String telefono_empresa, String ubicacion_empresa, String rut_empresa, int id_tipo_cliente_fk) {
+        this.id_cliente = 0;
+        this.nombre_cliente = "";
+        this.apellido_cliente = "";
+        this.documento_cliente = "";
+        this.direccion_cliente = "";
+        this.telefono_cliente = "";
+        this.celular_cliente = "";
+        this.correo = "";
+        this.contraseña = "";
+        this.nombre_empresa = "";
+        this.telefono_empresa = "";
+        this.ubicacion_empresa = "";
+        this.rut_empresa = "";
+        this.id_tipo_cliente_fk = 0;
+    }
+
     
-    public Cliente(){
-        
+
+    public int getId_cliente() {
+        return id_cliente;
     }
 
-    public Cliente(String nombreCliente, String primerApellido, String segundoApellido, String documentoCliente, String direccion, String telefono, String celular, String correo, String contraseña) {
-        this.nombreCliente = nombreCliente;
-        this.primerApellido = primerApellido;
-        this.segundoApellido = segundoApellido;
-        this.documentoCliente = documentoCliente;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.celular = celular;
-        this.correo = correo;
-        this.contraseña = contraseña;
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public String getNombre_cliente() {
+        return nombre_cliente;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public void setNombre_cliente(String nombre_cliente) {
+        this.nombre_cliente = nombre_cliente;
     }
 
-    public String getNombreCliente() {
-        return nombreCliente;
+    public String getApellido_cliente() {
+        return apellido_cliente;
     }
 
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
+    public void setApellido_cliente(String apellido_cliente) {
+        this.apellido_cliente = apellido_cliente;
     }
 
-    public String getPrimerApellido() {
-        return primerApellido;
+    public String getDocumento_cliente() {
+        return documento_cliente;
     }
 
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
+    public void setDocumento_cliente(String documento_cliente) {
+        this.documento_cliente = documento_cliente;
     }
 
-    public String getSegundoApellido() {
-        return segundoApellido;
+    public String getDireccion_cliente() {
+        return direccion_cliente;
     }
 
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
+    public void setDireccion_cliente(String direccion_cliente) {
+        this.direccion_cliente = direccion_cliente;
     }
 
-    public String getDocumentoCliente() {
-        return documentoCliente;
+    public String getTelefono_cliente() {
+        return telefono_cliente;
     }
 
-    public void setDocumentoCliente(String documentoCliente) {
-        this.documentoCliente = documentoCliente;
+    public void setTelefono_cliente(String telefono_cliente) {
+        this.telefono_cliente = telefono_cliente;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getCelular_cliente() {
+        return celular_cliente;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setCelular_cliente(String celular_cliente) {
+        this.celular_cliente = celular_cliente;
     }
 
     public String getCorreo() {
@@ -116,5 +110,47 @@ public class Cliente {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-}
 
+    public String getNombre_empresa() {
+        return nombre_empresa;
+    }
+
+    public void setNombre_empresa(String nombre_empresa) {
+        this.nombre_empresa = nombre_empresa;
+    }
+
+    public String getTelefono_empresa() {
+        return telefono_empresa;
+    }
+
+    public void setTelefono_empresa(String telefono_empresa) {
+        this.telefono_empresa = telefono_empresa;
+    }
+
+    public String getUbicacion_empresa() {
+        return ubicacion_empresa;
+    }
+
+    public void setUbicacion_empresa(String ubicacion_empresa) {
+        this.ubicacion_empresa = ubicacion_empresa;
+    }
+
+    public String getRut_empresa() {
+        return rut_empresa;
+    }
+
+    public void setRut_empresa(String rut_empresa) {
+        this.rut_empresa = rut_empresa;
+    }
+
+    public int getId_tipo_cliente_fk() {
+        return id_tipo_cliente_fk;
+    }
+
+    public void setId_tipo_cliente_fk(int id_tipo_cliente_fk) {
+        this.id_tipo_cliente_fk = id_tipo_cliente_fk;
+    }
+    
+    
+    
+}
