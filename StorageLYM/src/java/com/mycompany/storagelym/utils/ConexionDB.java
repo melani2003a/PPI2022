@@ -4,34 +4,53 @@ import java.sql.*;
 
 public class ConexionDB {
 
-    public static Connection getConexion() {
-        
-            Connection con = null;
+    protected Connection conn = null;
+
+    public ConexionDB() {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://bzfwg2cpzbulcunzphvb-mysql.services.clever-cloud.com/bzfwg2cpzbulcunzphvb?user=utpsc0yzka7loluy&password=Ye2s2MVFHXAaAjOx5CGK");
+            conn = DriverManager.getConnection("jdbc:mysql://bzfwg2cpzbulcunzphvb-mysql.services.clever-cloud.com/bzfwg2cpzbulcunzphvb?user=utpsc0yzka7loluy&password=Ye2s2MVFHXAaAjOx5CGK");
+            
+            
+            if (conn != null) {
 
-            System.out.println("Conexión satisfactoria");
+                System.out.println("Conexión OK " + conn);
+            }
 
+        } catch (SQLException ex) {
+
+            System.out.println("Error en SQL: " + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+
+            System.out.println("Falta Driver: " + ex.getMessage());
+        }
+    }
+    
+    public Connection conectar(){
+        return conn;
+    }
+    
+    public static void main(String[] args) {
+        
+        ConexionDB cn = new ConexionDB();
+        Statement st;
+        ResultSet rs;
+        
+        try {
+            
+            st = cn.conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM CLIENTE");
+            
+            while(rs.next()){
+                System.out.println(rs.getInt("id_cliente")+" "+rs.getString("nombre_cliente")+" "+rs.getString("primer_apellido"));
+            }
+            
         } catch (Exception e) {
-
-            System.out.println("Error: " + e);
+            
+            System.out.println(e);
         }
         
-        return con;
     }
-
-    public Connection conectar(){
-        Connection con = null;
-        
-        return con;
-        
-    }
-    public static void main(String[] args) {
-     
-        ConexionDB.getConexion();
-        
-    }
-
+    
 }

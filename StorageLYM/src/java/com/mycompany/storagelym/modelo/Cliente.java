@@ -20,7 +20,7 @@ public class Cliente {
     private String rut_empresa;
     private int id_tipo_cliente_fk;
 
-    public Cliente(int id_cliente, String nombre_cliente, String apellido_cliente, String documento_cliente, String direccion_cliente, String telefono_cliente, String celular_cliente, String correo, String contraseña, String nombre_empresa, String telefono_empresa, String ubicacion_empresa, String rut_empresa, int id_tipo_cliente_fk) {
+    public Cliente() {
         this.id_cliente = 0;
         this.nombre_cliente = "";
         this.apellido_cliente = "";
@@ -36,9 +36,7 @@ public class Cliente {
         this.rut_empresa = "";
         this.id_tipo_cliente_fk = 0;
     }
-
     
-
     public int getId_cliente() {
         return id_cliente;
     }
