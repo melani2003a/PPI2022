@@ -1,22 +1,17 @@
 <%-- 
-    Document   : Clientes
-    Created on : 24/09/2022, 07:24:12 AM
+    Document   : EditarClientes
+    Created on : 21/10/2022, 04:18:36 PM
     Author     : Melani
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
 <%@page import="com.mycompany.storagelym.modelo.Cliente"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    List<Cliente> lista = (List<Cliente>) request.getAttribute("lista");
-%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title class="titulo">Clientes</title>
+        <title>Clientes</title>
         <!--    <link rel="stylesheet" type="text/css" href="CSS/CSS.css"/> -->
         <link rel="stylesheet" href="./CSS/CSS.css"/>
         <!-- Latest compiled and minified CSS -->
@@ -25,12 +20,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Popper JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
     </head>
-    <!-- En este listado solo se vera el nombre correspondiente al cliente -->
-    <body class="cuerpo">
-
-        <!-- Nav principal que servira para esta y las demas paginas -->
+    
+    <body>
+         <!-- Nav principal que servira para esta y las demas paginas -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
@@ -53,33 +46,49 @@
                 </a>
             </li>
         </ul>
-
-        <h1 class="titulo">Clientes</h1>
-        <p class="cliente">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en 
-            demostraciones de tipografías o de borradores de diseño para probar 
-            el diseño visual antes de insertar el texto final</p>
-
-
-        <!-- Contenedores de la informacion -->
-        <c:forEach var="item" items="${lista}">
-            <div id="normal">
-                <div class="rows"> 
-                    <p class="nombres">
-                        <a href="MainController3?op=list"><img src="./Images/check.png" class="checkRows"></a>
-                            ${item.nombre_cliente}
-                            ${item.apellido_cliente}
-                        <a href="MainController3?op=editar&id_cliente=${item.id_cliente}"><img src="./Images/editar.png" class="editar"></a>
-                        <a href="MainController3?op=eliminar&id_cliente=${item.id_cliente}" onclick="return(confirm('Estas seguro de eliminar el registro?'))"><img src="./Images/delete.png" class="eliminar"></a>
-                    </p>   
-                </div>
-            </div>
-        </c:forEach>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-            <a href="MainController3?op=nuevo"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
-
-        </div>       
-
-        <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 
+         
+        <!--Form que se utiliza para ingresar y editar un cliente-->
+        <h1>Nuevo Cliente</h1>
+        <form action="MainController3" method="post">
+            <table>
+                <tr>
+                    <td><input type="hidden" name="id_cliente" value="${cliente.id_cliente}"></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="nombre_cliente" value="${cliente.nombre_cliente}"></td>
+                </tr>
+                <tr>
+                    <td>Apellido</td>
+                    <td><input type="text" name="primer_apellido" value="${cliente.apellido_cliente}"></td>
+                </tr>
+                <tr>
+                   <td>Documento</td>
+                    <td><input type="text" name="documento_cliente" value="${cliente.documento_cliente}"></td>
+                </tr>
+                <tr>
+                    <td>Celular</td>
+                    <td><input type="text" name="celular" value="${cliente.celular_cliente}"></td>
+                </tr>
+                <tr>
+                    <td>Correo</td>
+                    <td><input type="text" name="correo" value="${cliente.correo}"></td>
+                </tr>
+                <tr>
+                     <td>Contraseña</td>
+                    <td><input type="text" name="contraseña" value="${cliente.contraseña}"></td>
+                </tr>
+                <tr>
+                    <td>Empresa</td>
+                    <td><input type="text" name="nombre_empresa" value="${cliente.nombre_empresa}"></td>
+                </tr>
+                <tr>
+                <a><button type="submit" value="Enviar" class="botonBasico5">Enviar</button></a>
+                </tr>
+            </table>
+        </form>
+                
+                <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 
         <footer>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -99,5 +108,5 @@
                 </li>
             </ul>
         </footer>
-</body>
+    </body>
 </html>

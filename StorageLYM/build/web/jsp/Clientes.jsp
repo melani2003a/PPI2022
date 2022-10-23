@@ -61,22 +61,21 @@
 
 
         <!-- Contenedores de la informacion -->
-        <div id="normal">
-            <c:forEach var="item" items="${lista}">
+        <c:forEach var="item" items="${lista}">
+            <div id="normal">
                 <div class="rows"> 
                     <p class="nombres">
                         <a href="MainController3?op=list"><img src="./Images/check.png" class="checkRows"></a>
-                        ${item.nombre_cliente}
-                        ${item.apellido_cliente}
+                            ${item.nombre_cliente}
+                            ${item.apellido_cliente}
                         <a href="MainController3?op=editar&id_cliente=${item.id_cliente}"><img src="./Images/editar.png" class="editar"></a>
                         <a href="MainController3?op=eliminar&id_cliente=${item.id_cliente}" onclick="return(confirm('Estas seguro de eliminar el registro?'))"><img src="./Images/delete.png" class="eliminar"></a>
-
                     </p>   
                 </div>
-        </div>
-            </c:forEach>
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                <a href="MainController3?op=nuevo"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
+            </div>
+        </c:forEach>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+            <a href="MainController3?op=nuevo"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
 
         </div>       
 
@@ -100,5 +99,5 @@
                 </li>
             </ul>
         </footer>
-    </body>
+</body>
 </html>

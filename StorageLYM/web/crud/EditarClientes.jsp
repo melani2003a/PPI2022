@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-
+    Cliente cliente = (Cliente)request.getAttribute("cliente");
 %>
 <!DOCTYPE html>
 <html>
@@ -55,44 +55,38 @@
         <c:if test="${item.id_cliente == 0}" > Nuevo Cliente </c:if>
         <c:if test="${item.id_cliente != 0}"> Editar Cliente </c:if>
         </h1>
-        <form action="MainController3" method="POST">
-            <table border="1">
+        <form action="MainController3" method="post">
+            <table>
                 <tr>
-                    <td>Id</td>
-                    <td><input type="number" name="id_cliente" value="${item.id_cliente}"></td>
+                    <td><input type="hidden" name="id_cliente" value="${cliente.id_cliente}"></td>
                 </tr>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" name="nombre_cliente" value="${item.nombre_cliente}"></td>
+                    <td><input type="text" name="nombre_cliente" value="${cliente.nombre_cliente}"></td>
                 </tr>
                 <tr>
                     <td>Apellido</td>
-                    <td><input type="text" name="primer_apellido" value="${item.primer_apellido}"></td>
+                    <td><input type="text" name="primer_apellido" value="${cliente.apellido_cliente}"></td>
                 </tr>
                 <tr>
                    <td>Documento</td>
-                    <td><input type="text" name="documento_cliente" value="${item.documento_cliente}"></td>
+                    <td><input type="text" name="documento_cliente" value="${cliente.documento_cliente}"></td>
                 </tr>
-                <tr>
-                    <td>Telefono</td>
-                    <td><input type="text" name="telefono" value="${item.telefono}"></td>
-                </tr>
-
                 <tr>
                     <td>Celular</td>
-                    <td><input type="text" name="celular" value="${item.celular}"></td>
+                    <td><input type="text" name="celular" value="${cliente.celular_cliente}"></td>
                 </tr>
                 <tr>
                     <td>Correo</td>
-                    <td><input type="text" name="correo" value="${item.correo}"></td>
+                    <td><input type="text" name="correo" value="${cliente.correo}"></td>
                 </tr>
                 <tr>
                      <td>Contraseña</td>
-                    <td><input type="text" name="contraseña" value="${item.contraseña}"></td>
+                    <td><input type="text" name="contraseña" value="${cliente.contraseña}"></td>
                 </tr>
                 <tr>
                     <td>Empresa</td>
-                    <td><input type="text" name="nombre_empresa" value="${item.nombre_empresa}"></td>
+                    <td><input type="text" name="nombre_empresa" value="${cliente.nombre_empresa}"></td>
                 </tr>
                 <tr>
                 <a><button type="submit" value="Enviar" class="botonBasico5">Enviar</button></a>

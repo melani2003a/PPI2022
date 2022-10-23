@@ -73,7 +73,7 @@ public class MainController3 extends HttpServlet {
         if (op.equals("nuevo")) {
             Cliente l = new Cliente();
             request.setAttribute("cliente", 1);
-            request.getRequestDispatcher("crud/EditarClientes.jsp").forward(request, response);
+            request.getRequestDispatcher("crud/NuevoCliente.jsp").forward(request, response);
         }
         //Peticion editar cliente
         if (op.equals("editar")) {
@@ -87,7 +87,7 @@ public class MainController3 extends HttpServlet {
                 Cliente cl = new Cliente();
 
                 while (rs.next()) {
-                    cl.setId_cliente(rs.getInt("id_cliente"));
+                    cl.setId_cliente(rs.getInt(id_cliente));
                     cl.setNombre_cliente(rs.getString("nombre_cliente"));
                     cl.setApellido_cliente(rs.getString("primer_apellido"));
                     cl.setDocumento_cliente(rs.getString("documento_cliente"));
@@ -102,7 +102,7 @@ public class MainController3 extends HttpServlet {
                     cl.setId_tipo_cliente_fk(rs.getInt("id_tipo_cliente_fk"));
 
                 }
-                request.setAttribute("Cliente", cl);
+                request.setAttribute("cliente", cl);
                 request.getRequestDispatcher("./crud/EditarClientes.jsp").forward(request, response);
 
             } catch (SQLException ex) {
