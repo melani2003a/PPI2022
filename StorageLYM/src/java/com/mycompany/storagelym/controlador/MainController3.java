@@ -71,9 +71,9 @@ public class MainController3 extends HttpServlet {
         }
         //Peticion nuevo
         if (op.equals("nuevo")) {
-            Cliente l = new Cliente();
-            request.setAttribute("cliente", 1);
-            request.getRequestDispatcher("crud/NuevoCliente.jsp").forward(request, response);
+            Cliente C = new Cliente();
+            request.setAttribute("cliente", C);
+            request.getRequestDispatcher("crud/EditarClientes.jsp").forward(request, response);
         }
         //Peticion editar cliente
         if (op.equals("editar")) {
@@ -99,7 +99,6 @@ public class MainController3 extends HttpServlet {
                     cl.setTelefono_empresa(rs.getString("telefono_empresa"));
                     cl.setUbicacion_empresa(rs.getString("ubicacion_empresa"));
                     cl.setRut_empresa(rs.getString("rut_empresa"));
-                    cl.setId_tipo_cliente_fk(rs.getInt("id_tipo_cliente_fk"));
 
                 }
                 request.setAttribute("cliente", cl);
@@ -139,7 +138,6 @@ public class MainController3 extends HttpServlet {
         String correo = request.getParameter("correo");
         String contraseña = request.getParameter("contraseña");
         String nombre_empresa = request.getParameter("nombre_empresa");
-        int id_tipo_cliente_fk = Integer.parseInt(request.getParameter("id_tipo_cliente_fk"));
 
         Cliente l = new Cliente();
         l.setId_cliente(id_cliente);
@@ -150,7 +148,6 @@ public class MainController3 extends HttpServlet {
         l.setCorreo(correo);
         l.setContraseña(contraseña);
         l.setNombre_empresa(nombre_empresa);
-        l.setId_tipo_cliente_fk(id_tipo_cliente_fk);
 
         ConexionDB canal = new ConexionDB();
         Connection conn = canal.conectar();
@@ -160,7 +157,7 @@ public class MainController3 extends HttpServlet {
         //Si el registro es nuevo
         if (id_cliente == 0) {
             String sql = "INSERT INTO CLIENTE(ID_CLIENTE, NOMBRE_CLIENTE, PRIMER_APELLIDO,"
-                    + " DOCUMENTO_CLIENTE,CELULAR, CORREO, CONTRASEÑA, NOMBRE_EMPRESA, ID_TIPO_CLIENTE_FK) "
+                    + " DOCUMENTO_CLIENTE,CELULAR, CORREO, CONTRASEÑA, NOMBRE_EMPRESA) "
                     + " VALUES (?,?,?,?,?,?,?,?,?)";
 
             try {
@@ -175,7 +172,6 @@ public class MainController3 extends HttpServlet {
                 ps.setString(6, l.getCorreo());
                 ps.setString(7, l.getContraseña());
                 ps.setString(8, l.getNombre_empresa());
-                ps.setInt(9, l.getId_tipo_cliente_fk());
 
                 ps.executeUpdate();
 
@@ -203,7 +199,6 @@ public class MainController3 extends HttpServlet {
                 ps.setString(9, l.getTelefono_empresa());
                 ps.setString(10, l.getUbicacion_empresa());
                 ps.setString(11, l.getRut_empresa());
-                ps.setInt(11, l.getId_tipo_cliente_fk());
                 ps.setInt(13, l.getId_cliente());
                 ps.executeUpdate();
             } catch (SQLException ex) {

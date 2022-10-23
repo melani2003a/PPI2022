@@ -18,7 +18,6 @@ public class Cliente {
     private String telefono_empresa;
     private String ubicacion_empresa;
     private String rut_empresa;
-    private int id_tipo_cliente_fk;
 
     public Cliente() {
         this.id_cliente = 0;
@@ -34,7 +33,6 @@ public class Cliente {
         this.telefono_empresa = "";
         this.ubicacion_empresa = "";
         this.rut_empresa = "";
-        this.id_tipo_cliente_fk = 0;
     }
     
     public int getId_cliente() {
@@ -139,16 +137,5 @@ public class Cliente {
 
     public void setRut_empresa(String rut_empresa) {
         this.rut_empresa = rut_empresa;
-    }
-
-    public int getId_tipo_cliente_fk() {
-        return id_tipo_cliente_fk;
-    }
-
-    public void setId_tipo_cliente_fk(int id_tipo_cliente_fk) {
-        this.id_tipo_cliente_fk = id_tipo_cliente_fk;
-    }
-    
-    
-    
+    }    
 }

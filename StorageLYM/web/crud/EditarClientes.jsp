@@ -25,7 +25,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     </head>
     
-    <body>
+    <body  class="cuerpo">
          <!-- Nav principal que servira para esta y las demas paginas -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
@@ -51,12 +51,12 @@
         </ul>
          
         <!--Form que se utiliza para ingresar y editar un cliente-->
-        <h1>
+        <h1 class="titulo">
         <c:if test="${item.id_cliente == 0}" > Nuevo Cliente </c:if>
         <c:if test="${item.id_cliente != 0}"> Editar Cliente </c:if>
         </h1>
         <form action="MainController3" method="post">
-            <table>
+            <table class="editar">
                 <tr>
                     <td><input type="hidden" name="id_cliente" value="${cliente.id_cliente}"></td>
                 </tr>
@@ -88,10 +88,8 @@
                     <td>Empresa</td>
                     <td><input type="text" name="nombre_empresa" value="${cliente.nombre_empresa}"></td>
                 </tr>
-                <tr>
-                <a><button type="submit" value="Enviar" class="botonBasico5">Enviar</button></a>
-                </tr>
             </table>
+                <button type="submit" value="Enviar" class="botonEnviar">Enviar</button></td>
         </form>
                 
                 <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 
