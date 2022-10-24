@@ -31,26 +31,12 @@ public class ConexionDB {
         return conn;
     }
     
-    public static void main(String[] args) {
-        
-        ConexionDB cn = new ConexionDB();
-        Statement st;
-        ResultSet rs;
-        
+    public void desconectar(){
         try {
-            
-            st = cn.conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM CLIENTE");
-            
-            while(rs.next()){
-                System.out.println(rs.getInt("id_cliente")+" "+rs.getString("nombre_cliente")+" "+rs.getString("primer_apellido"));
-            }
-            
-        } catch (Exception e) {
-            
-            System.out.println(e);
+            System.out.println("Desconectando la base de datos "+conn);
+            conn.close();
+        } catch (SQLException ex) {
+            System.out.println("Error de SQL "+ex.getMessage());
         }
-        
     }
-    
 }

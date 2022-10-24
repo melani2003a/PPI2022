@@ -345,7 +345,7 @@ input:focus {
     font-weight: inherit;
 }
 
-.editar {
+.editarCliente {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -356,13 +356,14 @@ input:focus {
 }
 
 
-.editar input {
+.editarCliente input {
     width: 90%;
     height: 30px;
     margin: 0.5rem;
     background: #FFF;
     border: 1px solid #4B4B4B;
-    padding-left: 50px;
+    margin-left: 30px;
+    padding-left: 10px;
 }
 
 .botonEnviar {
@@ -379,4 +380,52 @@ input:focus {
     font-size: 15px;
     font-weight: inherit;
     margin-left: 600px;
+}
+
+.botonBasico7{ /*duplicado para organizar boton de clientes*/
+    margin-top: -100px;
+    border: 1px solid #e86259;
+    width: 300px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: 500px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.table{
+    margin-left: 350px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.table th {
+    background: #ffffff;
+}
+
+.table td {
+    background: lightgray;
+}
+
+.botonesDetalle{
+    margin-top: 20px;
+    border: 1px solid #e86259;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #e20f00; /*color botón*/
+    color: #ffffff;
+    font-family: 'Candara', sans-serif ; /*tipografía texto*/
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: inherit;
+    margin-right: 350px;
+}
+
+.botones{
+    margin-left: 350px;
 }

@@ -34,7 +34,7 @@
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                    <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonInvisible2">Clientes</button></a>
+                    <a href="MainController3?op=list"><button type="button" class="botonInvisible2">Clientes</button></a>
                 </a>
             </li>
             <li class="nav-item">
@@ -61,30 +61,30 @@
 
 
         <!-- Contenedores de la informacion -->
-        <c:forEach var="item" items="${lista}">
-            <div id="normal">
-                <div class="rows"> 
-                    <p class="nombres">
-                        <a href="MainController3?op=list"><img src="./Images/check.png" class="checkRows"></a>
-                            ${item.nombre_cliente}
-                            ${item.apellido_cliente}
-                        <a href="MainController3?op=editar&id_cliente=${item.id_cliente}"><img src="./Images/editar.png" class="editar"></a>
-                        <a href="MainController3?op=eliminar&id_cliente=${item.id_cliente}" onclick="return(confirm('Estas seguro de eliminar el registro?'))"><img src="./Images/delete.png" class="eliminar"></a>
-                    </p>   
-                </div>
-            </div>
-        </c:forEach>
+        <table id="normal">
+            <c:forEach var="item" items="${lista}">
+                <tr class="rows">
+                    <td><a href="MainController3?op=detalle&id_cliente=${item.id_cliente}"><img src="./Images/check.png" class="checkRows"></a>
+                        ${item.nombre_cliente}
+                        ${item.apellido_cliente}
+                    </td>
+                    <td><a href="MainController3?op=editar&id_cliente=${item.id_cliente}"><img src="./Images/editar.png" class="editar"></a></td>
+                    <td><a href="MainController3?op=eliminar&id_cliente=${item.id_cliente}" onclick="return(confirm('Estas seguro de eliminar el registro?'))"><img src="./Images/delete.png" class="eliminar"></a></td>
+                </tr>
+            </c:forEach>
+        </table>
+
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-            <a href="MainController3?op=nuevo"><button type="button" class="botonBasico5">Nuevo Cliente</button></a>
+            <a href="MainController3?op=nuevo"><button type="button" class="botonBasico7">Nuevo Cliente</button></a>
 
         </div>       
 
-        <!-- Navbar de final de pagina que servira de apoyo para las demas paginas --> 
+        <!-- Footer de final de pagina que servira de apoyo para las demas paginas --> 
         <footer>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                        <a href="/StorageLYM/jsp/Clientes.jsp"><button type="button" class="botonInvisible2">Clientes</button></a>
+                        <a href="MainController3?op=list"><button type="button" class="botonInvisible2">Clientes</button></a>
                     </a>
                 </li>
                 <li class="nav-item">

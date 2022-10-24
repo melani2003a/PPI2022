@@ -56,7 +56,7 @@
         <c:if test="${item.id_cliente != 0}"> Editar Cliente </c:if>
         </h1>
         <form action="MainController3" method="post">
-            <table class="editar">
+            <table class="editarCliente">
                 <tr>
                     <td><input type="hidden" name="id_cliente" value="${cliente.id_cliente}"></td>
                 </tr>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <td>Celular</td>
-                    <td><input type="text" name="celular" value="${cliente.celular_cliente}"></td>
+                    <td><input type="text" name="celular_cliente" value="${cliente.celular_cliente}"></td>
                 </tr>
                 <tr>
                     <td>Correo</td>
@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                      <td>Contraseña</td>
-                    <td><input type="text" name="contraseña" value="${cliente.contraseña}"></td>
+                    <td><input type="password" name="contraseña" value="${cliente.contraseña}"></td>
                 </tr>
                 <tr>
                     <td>Empresa</td>

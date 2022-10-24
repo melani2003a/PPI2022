@@ -22,7 +22,7 @@
     <body class="cuerpo">
     <div class="register">
 		<div class="register-screen">
-			<div class="app-title">
+			<div class="titulo">
 				<h2>Iniciar Sesion</h2>
 			</div>
 

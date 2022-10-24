@@ -50,15 +50,10 @@ public class MainController3 extends HttpServlet {
                     cli.setNombre_cliente(rs.getString("nombre_cliente"));
                     cli.setApellido_cliente(rs.getString("primer_apellido"));
                     cli.setDocumento_cliente(rs.getString("documento_cliente"));
-                    cli.setDireccion_cliente(rs.getString("direccion"));
-                    cli.setTelefono_cliente(rs.getString("telefono"));
                     cli.setCelular_cliente(rs.getString("celular"));
                     cli.setCorreo(rs.getString("correo"));
                     cli.setContraseña(rs.getString("contraseña"));
                     cli.setNombre_empresa(rs.getString("nombre_empresa"));
-                    cli.setTelefono_empresa(rs.getString("telefono_empresa"));
-                    cli.setUbicacion_empresa(rs.getString("ubicacion_empresa"));
-                    cli.setRut_empresa(rs.getString("rut_empresa"));
 
                     lista.add(cli);
                 }
@@ -67,6 +62,8 @@ public class MainController3 extends HttpServlet {
 
             } catch (SQLException ex) {
                 System.out.println("Error en sql" + ex.getMessage());
+            } finally {
+                canal.desconectar();
             }
         }
         //Peticion nuevo
@@ -87,18 +84,14 @@ public class MainController3 extends HttpServlet {
                 Cliente cl = new Cliente();
 
                 while (rs.next()) {
-                    cl.setId_cliente(rs.getInt(id_cliente));
+                    cl.setId_cliente(rs.getInt("id_cliente"));
                     cl.setNombre_cliente(rs.getString("nombre_cliente"));
                     cl.setApellido_cliente(rs.getString("primer_apellido"));
                     cl.setDocumento_cliente(rs.getString("documento_cliente"));
-                    cl.setTelefono_cliente(rs.getString("telefono"));
                     cl.setCelular_cliente(rs.getString("celular"));
                     cl.setCorreo(rs.getString("correo"));
                     cl.setContraseña(rs.getString("contraseña"));
                     cl.setNombre_empresa(rs.getString("nombre_empresa"));
-                    cl.setTelefono_empresa(rs.getString("telefono_empresa"));
-                    cl.setUbicacion_empresa(rs.getString("ubicacion_empresa"));
-                    cl.setRut_empresa(rs.getString("rut_empresa"));
 
                 }
                 request.setAttribute("cliente", cl);
@@ -114,15 +107,51 @@ public class MainController3 extends HttpServlet {
             try {
                 int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
 
-                String sql = "delete from cliente where id_cliente=?";
+                String sql = "DELETE FROM CLIENTE WHERE ID_CLIENTE = ?";
                 ps = conn.prepareStatement(sql);
                 ps.setInt(1, id_cliente);
-
                 ps.executeUpdate();
+
             } catch (SQLException ex) {
                 System.out.println("Error en sql" + ex.getMessage());
+            } finally {
+                canal.desconectar();
             }
-            response.sendRedirect("MainController3");
+            response.sendRedirect("MainController3?op=list");
+        }
+
+        if (op.equals("detalle")) {
+
+            try {
+                int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+
+                String sql = "SELECT NOMBRE_CLIENTE, PRIMER_APELLIDO,"
+                        + "DOCUMENTO_CLIENTE, CELULAR, CORREO, NOMBRE_EMPRESA"
+                        + " FROM CLIENTE WHERE ID_CLIENTE = ?";
+
+                ps = conn.prepareStatement(sql);
+                ps.setInt(1, id_cliente);
+                rs = ps.executeQuery();
+
+                Cliente Dcli = new Cliente();
+
+                while (rs.next()) {
+                    Dcli.setNombre_cliente(rs.getString("nombre_cliente"));
+                    Dcli.setApellido_cliente(rs.getString("primer_apellido"));
+                    Dcli.setDocumento_cliente(rs.getString("documento_cliente"));
+                    Dcli.setCelular_cliente(rs.getString("celular"));
+                    Dcli.setCorreo(rs.getString("correo"));
+                    Dcli.setNombre_empresa(rs.getString("nombre_empresa"));
+                }
+
+                request.setAttribute("cliente", Dcli);
+                request.getRequestDispatcher("crud/Detalle.jsp").forward(request, response);
+
+            } catch (SQLException ex) {
+                System.out.println("Error en sql" + ex.getMessage());
+            } finally {
+                canal.desconectar();
+            }
         }
     }
 
@@ -131,6 +160,7 @@ public class MainController3 extends HttpServlet {
             throws ServletException, IOException {
 
         int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+
         String nombre_cliente = request.getParameter("nombre_cliente");
         String apellido_cliente = request.getParameter("primer_apellido");
         String documento_cliente = request.getParameter("documento_cliente");
@@ -156,55 +186,56 @@ public class MainController3 extends HttpServlet {
 
         //Si el registro es nuevo
         if (id_cliente == 0) {
-            String sql = "INSERT INTO CLIENTE(ID_CLIENTE, NOMBRE_CLIENTE, PRIMER_APELLIDO,"
+            String sql = "INSERT INTO CLIENTE(NOMBRE_CLIENTE, PRIMER_APELLIDO,"
                     + " DOCUMENTO_CLIENTE,CELULAR, CORREO, CONTRASEÑA, NOMBRE_EMPRESA) "
-                    + " VALUES (?,?,?,?,?,?,?,?,?)";
+                    + " VALUES (?,?,?,?,?,?,?)";
 
             try {
-
-                ps = conn.prepareStatement(sql);
-
-                ps.setInt(1, id_cliente);
-                ps.setString(2, l.getNombre_cliente());
-                ps.setString(3, l.getApellido_cliente());
-                ps.setString(4, l.getDocumento_cliente());
-                ps.setString(5, l.getCelular_cliente());
-                ps.setString(6, l.getCorreo());
-                ps.setString(7, l.getContraseña());
-                ps.setString(8, l.getNombre_empresa());
-
-                ps.executeUpdate();
-
-            } catch (SQLException ex) {
-                System.out.println("Error en sql" + ex.getMessage());
-            }
-            response.sendRedirect("MainController3?op=list");
-        }//Si el registro ya existe
-        else {
-            try {
-                String sql = "update cliente set nombre_cliente=?,apellido_cliente=?,"
-                        + "documento_cliente=?,celular_cliente=?,correo,contraseña=?,"
-                        + "nombre_empresa=?, where id_cliente = ?";
 
                 ps = conn.prepareStatement(sql);
 
                 ps.setString(1, l.getNombre_cliente());
                 ps.setString(2, l.getApellido_cliente());
                 ps.setString(3, l.getDocumento_cliente());
-                ps.setString(4, l.getTelefono_cliente());
-                ps.setString(5, l.getCelular_cliente());
-                ps.setString(6, l.getCorreo());
-                ps.setString(7, l.getContraseña());
-                ps.setString(8, l.getNombre_empresa());
-                ps.setString(9, l.getTelefono_empresa());
-                ps.setString(10, l.getUbicacion_empresa());
-                ps.setString(11, l.getRut_empresa());
-                ps.setInt(13, l.getId_cliente());
+                ps.setString(4, l.getCelular_cliente());
+                ps.setString(5, l.getCorreo());
+                ps.setString(6, l.getContraseña());
+                ps.setString(7, l.getNombre_empresa());
+
                 ps.executeUpdate();
+
             } catch (SQLException ex) {
-                System.out.println("Error al actulizar" + ex.getMessage());
+                System.out.println("Error en sql" + ex.getMessage());
+            } finally {
+                canal.desconectar();
             }
-            response.sendRedirect("MainController3");
+            response.sendRedirect("MainController3?op=list");
+        }//Si el registro ya existe
+        else {
+            try {
+                String sql = "UPDATE CLIENTE SET NOMBRE_CLIENTE = ?, "
+                        + "PRIMER_APELLIDO = ?, DOCUMENTO_CLIENTE = ?, "
+                        + "CELULAR = ?, CORREO= ?, CONTRASEÑA = ?, "
+                        + "NOMBRE_EMPRESA = ? WHERE ID_CLIENTE= ?";
+
+                ps = conn.prepareStatement(sql);
+
+                ps.setString(1, l.getNombre_cliente());
+                ps.setString(2, l.getApellido_cliente());
+                ps.setString(3, l.getDocumento_cliente());
+                ps.setString(4, l.getCelular_cliente());
+                ps.setString(5, l.getCorreo());
+                ps.setString(6, l.getContraseña());
+                ps.setString(7, l.getNombre_empresa());
+                ps.setInt(8, l.getId_cliente());
+                ps.executeUpdate();
+
+            } catch (SQLException ex) {
+                System.out.println("Error al actualizar" + ex.getMessage());
+            } finally {
+                canal.desconectar();
+            }
+            response.sendRedirect("MainController3?op=list");
         }
 
     }
